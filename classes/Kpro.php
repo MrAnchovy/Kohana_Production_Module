@@ -5,7 +5,7 @@
  * @package     kpro
  * @category    core
  * @author      [MrAnchovy](http://www.mranchovy.com)
- * @copyright   Copyright © 2013 MrAnchovy
+ * @copyright   Copyright © 2013 [MrAnchovy](http://www.mranchovy.com)
  * @license     http://kohanaframework.org/license
  * @link        https://github.com/MrAnchovy/Kohana_Production_Module
 **/
