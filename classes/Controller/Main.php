@@ -54,4 +54,14 @@ protected function resource_retrieve($id) {
   return $resources[$id];
 }
 
+protected function action_page_error() {
+  Kohana::$environment = Kohana::PRODUCTION;
+  throw new Kohana_Exception('This demonstrates an exception in production mode');
+}
+
+protected function action_page_debug() {
+  Kohana::$environment = Kohana::DEVELOPMENT;
+  throw new Kohana_Exception('This demonstrates an exception in development mode');
+}
+
 }
