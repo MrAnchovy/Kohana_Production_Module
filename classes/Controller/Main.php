@@ -12,14 +12,30 @@
 class Controller_Main extends Controller_Default {
 
 /**
- * Illustrates a spedific page method
+ * Demonstrates an exception in development mode
+**/
+protected function action_page_debug() {
+  Kohana::$environment = Kohana::DEVELOPMENT;
+  throw new Kohana_Exception('This demonstrates an exception in development mode');
+}
+
+/**
+ * Demonstrates an exception in production mode
+**/
+protected function action_page_error() {
+  Kohana::$environment = Kohana::PRODUCTION;
+  throw new Kohana_Exception('This demonstrates an exception in production mode');
+}
+
+/**
+ * Example implementation of a specific page
 **/
 protected function action_page_help() {
   return 'Here is some help';
 }
 
 /**
- * Illustrates an index page
+ * Exemple of retrieving a page from a database
 **/
 protected function action_pageId($id) {
   $resource = $this->resource_retrieve($id);
@@ -32,14 +48,14 @@ protected function action_pageId($id) {
 }
 
 /**
- * Illustrates an index page
+ * Example implementation of an index page
 **/
 protected function action_pageIndex() {
   return 'This is the index page';
 }
 
 /**
- * Illustrates resource retrieval
+ * Exemple of retrieving a page from a database
 **/
 protected function resource_retrieve($id) {
   $resources = array(
@@ -52,16 +68,6 @@ protected function resource_retrieve($id) {
     return NULL;
   }
   return $resources[$id];
-}
-
-protected function action_page_error() {
-  Kohana::$environment = Kohana::PRODUCTION;
-  throw new Kohana_Exception('This demonstrates an exception in production mode');
-}
-
-protected function action_page_debug() {
-  Kohana::$environment = Kohana::DEVELOPMENT;
-  throw new Kohana_Exception('This demonstrates an exception in development mode');
 }
 
 }
